@@ -1,0 +1,23 @@
+<html>
+
+<body style="padding:3em;line-height: 2em;width: 600px;margin: 0 auto;">
+    <h1>你好莹莹，我是网页，请问要调试哪个？</h1>
+    
+    <script>
+        var config={config};
+        function show(ele) {
+            xx.src=ele.getAttribute('url');
+        }
+        var html='';
+        for(var path in config){
+            var jsArr=config[path];
+            for(var i=0;i<jsArr.length;i++){
+                html+=`<div><a href='javascript:;' url='./js/${path}/${jsArr[i]}' onclick='show(this);'>${path}/${jsArr[i]}</a></div>`
+            }
+        }
+        document.write (html);
+    </script>
+    <iframe id="xx"></iframe>
+</body>
+
+</html>

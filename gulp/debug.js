@@ -13,15 +13,20 @@ app.get('/', function (req, res) {
     var data=fs.readFileSync('./index.html').toString();
     var config={};
     readDir('./js','**',function(file,path){
-        var path2=config[file]=[];
+        var pathConfig=JSON.parse(fs.readFileSync(path+'/'+file+'/config.json').toString());
+        var files=[];
+        config[file]={
+            config:pathConfig,
+            files:files
+        };
         readDir(path+'/'+file,'js',function(file,path){
-            path2.push(file);
+            files.push(file);
         });
     });
-    data=data.replace('{config}',JSON.stringify(config));
+    data=data.replace('$$config$$',JSON.stringify(config));
     res.send(data);
 });
-app.get('/js/*.js',function(req, res){
+app.get('/js/**/*.js',function(req, res){
     res.send('<html><header><script>'+fs.readFileSync('./'+req.url)+'</script></header></html>');
 })
 console.log('http://localhost:3000/');

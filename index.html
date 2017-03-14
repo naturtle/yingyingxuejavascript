@@ -1,23 +1,56 @@
 <html>
-
-<body style="padding:3em;line-height: 2em;width: 600px;margin: 0 auto;">
-    <h1>你好莹莹，我是网页，请问要调试哪个？</h1>
-    
-    <script>
-        var config={config};
-        function show(ele) {
-            xx.src=ele.getAttribute('url');
+<header>
+    <style>
+        body {
+            padding: 3em;
+            line-height: 2em;
+            width: 600px;
+            margin: 0 auto;
         }
-        var html='';
-        for(var path in config){
-            var jsArr=config[path];
-            for(var i=0;i<jsArr.length;i++){
-                html+=`<div><a href='javascript:;' url='./js/${path}/${jsArr[i]}' onclick='show(this);'>${path}/${jsArr[i]}</a></div>`
+        
+        .btn {
+            text-decoration:underline;
+            cursor: pointer;
+            color:#000;
+        }
+        .btn2 {
+            cursor: pointer;
+            color:#555;
+        }
+        
+        iframe {
+            background-color: #f0f0f0;
+        }
+    </style>
+
+</header>
+
+<body>
+    <h1>你好莹莹，我是网页，请问要调试哪个？</h1>
+
+    <script>
+        var config = $$config$$;
+        function show(ele, id) {
+            var ifrm = document.getElementById(id);
+            ifrm.src = ele.getAttribute('url');
+            ele.className='btn2';
+            ifrm.style.display = '';
+        }
+        var html = '';
+        for (var path in config) {
+            var data = config[path];
+            var jsArr = data.files;
+            html+='<h4>'+path+'. '+data.config.name+'</h4>';
+            for (var i = 0; i < jsArr.length; i++) {
+                var id = Math.random().toString().substring(2);
+                var jsPath = path + '\\' + jsArr[i];
+                html += `
+    <div><span class="btn" url='.\\js\\${jsPath}' onclick='show(this,"${id}");'>${jsArr[i]}</span></div>
+    <iframe id="${id}" style="display:none;"></iframe>`;
             }
         }
-        document.write (html);
+        document.write(html);
     </script>
-    <iframe id="xx"></iframe>
 </body>
 
 </html>

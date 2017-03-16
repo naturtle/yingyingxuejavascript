@@ -10,3 +10,22 @@ prototype
 new
 
 class  es7之后才有
+
+__proto__
+
+
+DOM 对象   
+
+
+Object.create
+
+
+    xxxxx.call()
+    xxxxx.apply()
+
+
+
+数组的更多操作
+
+
+boolean

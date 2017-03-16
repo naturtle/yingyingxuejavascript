@@ -2,9 +2,6 @@ document.write(`这里讲数据类型  函数
     <br>
     <br>
 `)
-function log(s){
-    document.write('<br>'+JSON.stringify(s));
-}
 /**
  * 数字123  123.122   .1231  1e3    
     字符串 "" '' ``   

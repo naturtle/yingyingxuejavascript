@@ -35,7 +35,10 @@ document.write(`这里讲数据类型  对象Object;
 // alert(o.toString());
 
 
-// var  o=Object.create(null);
-
+var  o=Object.create(null);
+log(o);
 
 // alert(o.toString());
+
+// var o=Object();
+// log(o);

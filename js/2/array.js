@@ -1,10 +1,7 @@
-document.write(`这里讲数据类型  数组array
+log2(`这里讲数据类型  数组array
     <br>
     <br>
 `)
-function log(s){
-    document.write('<br>'+JSON.stringify(s));
-}
 /**
  * 数字123  123.122   .1231  1e3    
     字符串 "" '' ``   

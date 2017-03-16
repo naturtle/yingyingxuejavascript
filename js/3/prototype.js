@@ -15,7 +15,7 @@ log(add.prototype);
 add.prototype.money=999999999999;
 
 var addIntance=new add();
-
+debugger;
 log(addIntance.money);
 
 add.prototype.pay=function(money){
@@ -23,3 +23,5 @@ add.prototype.pay=function(money){
 }
 addIntance.pay(11111111);
 log(addIntance.money);
+
+//原型的意思大概就是你用泥捏了一个陶瓷娃娃，那么可以说这个陶瓷娃娃(实例)的原型(prototype)是泥

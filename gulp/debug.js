@@ -27,6 +27,13 @@ app.get('/', function (req, res) {
     res.send(data);
 });
 app.get('/js/**/*.js',function(req, res){
-    res.send('<html><header><script>'+fs.readFileSync('./'+req.url)+'</script></header></html>');
+    res.send('<html><header><script>'
+    +`
+function log(s){
+    document.write('<br>'+JSON.stringify(s));
+}
+function log2(s){
+    document.write('<br>'+s);
+}`+fs.readFileSync('./'+req.url)+'</script></header></html>');
 })
 console.log('http://localhost:3000/');

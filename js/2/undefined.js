@@ -25,7 +25,7 @@ var xxx;
 // alert({}.a);
 // alert({a:1}.a);
 
-// 3/void 语句会把后面的东西的值吃掉，换成undefined;
+// 3.void 语句会把后面的东西的值吃掉，换成undefined;
 
 // alert (void 2412451231);
 

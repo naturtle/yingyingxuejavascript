@@ -29,7 +29,7 @@ document.write(`这里讲数据类型  对象Object;
 // alert(yigebianliang["asdvcasln32rd21p43ejci3y12u epi21ufdjqcncwebac quo21...."]);
 
 
-// var  o=new Object();
+// var  o=new Object(    );
 // o.a=1;
 // o.toString=function(){return "我不是object Object"};
 // alert(o.toString());

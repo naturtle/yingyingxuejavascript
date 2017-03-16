@@ -2,7 +2,7 @@ document.write(`这里讲数据类型  未定义undefined
     
 `)
 /**
- * 数字123  123.122   .1231  1e3    
+ *  数字123  123.122   .1231  1e3    
     字符串 "" '' ``   
     未定义undefined    
     空nulll   
@@ -39,3 +39,5 @@ function func2(){return undefined};
 
 
 alert(func2());
+
+//5.一些不支持的操作，可能会得到undefined;

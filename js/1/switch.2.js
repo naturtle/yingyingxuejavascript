@@ -20,21 +20,21 @@ var isTrue=($$$+$)*_1233/a1234;
  */
 // switch($$$===1){
 //     case true:
-//         alert(1);
+//         log2(1);
 //         break;
 //     case false:
-//         alert(2);
+//         log2(2);
 //         break;
 //     case true:
-//         alert(3);
+//         log2(3);
 // }
 
-// alert('结束');
+// log2('结束');
 switch(false){
     case 1!==2:
-        alert(1);
+        log2(1);
         break;
     case 3/3===1:
-        alert(2);
+        log2(2);
         break;
 }

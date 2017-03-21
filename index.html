@@ -2,12 +2,10 @@
 <header>
     <style>
         body {
-            padding: 3em;
             line-height: 2em;
             width: 600px;
             margin: 0 auto;
         }
-        
         .btn {
             text-decoration:underline;
             cursor: pointer;
@@ -17,40 +15,55 @@
             cursor: pointer;
             color:#555;
         }
-        
-        iframe {
+        .top{
+            line-height: 3em;
+            text-align: center;
+        }
+        #tabBox{
+            position: absolute;
+            top:5em;
+            bottom:0;
+            left:0;
+            right:0;
+        }
+        .tabBox-left{
+            padding: 10px;
+            overflow-y: scroll;
+        }
+        .tabBox-right,.tabBox-left{
+            box-sizing: border-Box;
+            float:left;
+            width:50%;
+            height:100%;
+            border: 1px #555 solid;
+            border-top-width: 0px;
+        }
+        .tabBox-right{
             background-color: #f0f0f0;
+        }
+        .tabBox-title>a{
+            padding: 2px 6px 4px 6px;
+            border: 1px #555 solid;
+            border-top-right-radius: 5px;
+            border-top-left-radius: 5px;
+            margin-left:-1px;
+            cursor: pointer;
+        }
+        .tabBox-title>a.active{
+            border-bottom-width: 0px; 
         }
     </style>
 
 </header>
 
 <body>
-    <h1>你好莹莹，我是网页，请问要学习哪个？</h1>
-
-    <script>
-        var config = $$config$$;
-        function show(ele, id) {
-            var ifrm = document.getElementById(id);
-            ifrm.src = ele.getAttribute('url');
-            ele.className='btn2';
-            ifrm.style.display = '';
-        }
-        var html = '';
-        for (var path in config) {
-            var data = config[path];
-            var jsArr = data.files;
-            html+='<h4>'+path+'. '+data.config.name+'</h4>';
-            for (var i = 0; i < jsArr.length; i++) {
-                var id = Math.random().toString().substring(2);
-                var jsPath = path + '\\' + jsArr[i];
-                html += `
-    <div><span class="btn" url='.\\js\\${jsPath}' onclick='show(this,"${id}");'>${jsArr[i]}</span></div>
-    <iframe id="${id}" style="display:none;"></iframe>`;
-            }
-        }
-        document.write(html);
-    </script>
+    <h2 class='top'>你好莹莹，我是网页，请问要学习哪个？</h2>
+    <div id="tabBox">
+        <div id="tabBoxtitle" class="tabBox-title"></div>
+        <script src='./index.js'></script>
+        <iframe class="tabBox-right" id="ifrm"></iframe>
+    </div>
+    
 </body>
 
 </html>

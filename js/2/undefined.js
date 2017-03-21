@@ -15,19 +15,19 @@ document.write(`这里讲数据类型  未定义undefined
 //1.变量未定义会有默认值undefined
 var xxx;
 
-// alert(xxx+1);
-// alert(xxx+"string");
-// alert(xxx+null);
-// alert(xxx+{});
-// alert(xxx+function(){});
+// log2(xxx+1);
+// log2(xxx+"string");
+// log2(xxx+null);
+// log2(xxx+{});
+// log2(xxx+function(){});
 
 // 2.对象不存在的属性，会读到undefined;
-// alert({}.a);
-// alert({a:1}.a);
+// log2({}.a);
+// log2({a:1}.a);
 
 // 3.void 语句会把后面的东西的值吃掉，换成undefined;
 
-// alert (void 2412451231);
+// log2 (void 2412451231);
 
 
 
@@ -38,6 +38,6 @@ function func1(){return;};
 function func2(){return undefined};
 
 
-alert(func2());
+log2(func2());
 
 //5.一些不支持的操作，可能会得到undefined;

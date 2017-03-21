@@ -7,17 +7,17 @@ var   $=2;
 var $$$=1;
 var isTrue=($$$+$)*_1233/a1234;
 // if       (     isTrue*10>2     ){
-//     // alert(isTrue);
+//     // log2(isTrue);
 // }else{
-//     // alert("else 分支");
+//     // log2("else 分支");
 // }
 // if 语法  定义  就是 if(表达式)执行语句(支持语法块)
 
 //  没带语法块的
-// if(isTrue*10>2) alert(isTrue);
-// else            alert(1);
+// if(isTrue*10>2) log2(isTrue);
+// else            log2(1);
 
 //  这是带语法块的
-if(false) {alert(isTrue);}
-else            {alert(1);alert(2);/*可以写很多句，当成一个语法块*/}
+if(false) {log2(isTrue);}
+else            {log2(1);log2(2);/*可以写很多句，当成一个语法块*/}
 

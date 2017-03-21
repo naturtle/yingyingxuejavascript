@@ -1,0 +1,16 @@
+{
+    "compilerOptions": {
+        "noImplicitAny": true,
+        "target":"es5",
+        "experimentalDecorators":true,
+        "strictNullChecks": true,
+        "declaration":true
+    },
+    "include": [
+        "*.ts"
+    ],
+    "exclude": [
+        "../node_modules",
+        "../src"
+    ]
+}

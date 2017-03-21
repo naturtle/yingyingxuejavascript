@@ -2,6 +2,7 @@ var express = require('express');
 var app = express();
 // var bodyParser = require("body-parser");
 var fs=require('fs');
+var path=require('path');
 var readDir=require('./readdir.js').default;
 // app.use(bodyParser.urlencoded({extended: true}))
 
@@ -10,7 +11,10 @@ var server = app.listen(3000, function () {
     var port = server.address().port;
 });
 app.get('/', function (req, res) {
-    var data=fs.readFileSync('./index.html').toString();
+    res.sendFile(path.resolve('index.html'));
+});
+app.get('/index.js', function (req, res) {
+    var data=fs.readFileSync('index.js').toString();
     var config={};
     readDir('./js','**',function(file,path){
         var pathConfig=JSON.parse(fs.readFileSync(path+'/'+file+'/config.json').toString());

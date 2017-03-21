@@ -16,9 +16,9 @@ var isTrue=($$$+$)*_1233/a1234;
  */ 
 switch($$$===1){
     case true:
-        alert(1);
+        log2(1);
         break;
     case false:
-        alert(2);
+        log2(2);
         break;
 }

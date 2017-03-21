@@ -27,7 +27,7 @@ var arr=Array(1,2,3);
 
 
 //数组的使用
-// alert(arr[0]);
+// log2(arr[0]);
 // document.write(arr[-1]);//游标不正确的时候会得到一个undefined;
 
 //什么叫做游标不正确呢

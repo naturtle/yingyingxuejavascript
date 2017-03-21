@@ -21,3 +21,26 @@ var isTrue=($$$+$)*_1233/a1234;
 if(false) {log2(isTrue);}
 else            {log2(1);log2(2);/*可以写很多句，当成一个语法块*/}
 
+
+if(3){
+    log3(`1`)
+}
+if(-1){
+    log3(`-1`)
+}
+if("1"){
+    log3(`"1"`)
+}
+
+if(0){
+    log3(`0`)
+}
+if(""){
+    log3(`""`)
+}
+if(null){
+    log3(`null`)
+}
+if(undefined){
+    log3(`undefined`)
+}

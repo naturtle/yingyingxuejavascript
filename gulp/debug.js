@@ -38,6 +38,13 @@ function log(s){
 }
 function log2(s){
     document.write('<br>'+s);
+}
+var re=/\\n/g;
+function log3(s){
+    document.write('<br>'+s.replace(re,'<br>'));
+}
+function log4(s){
+    document.write('<pre>'+s+'</pre>');
 }`+fs.readFileSync('./'+req.url)+'</script></header></html>');
 })
 console.log('http://localhost:3000/');

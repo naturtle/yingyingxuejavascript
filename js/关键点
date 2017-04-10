@@ -1,10 +1,17 @@
 this
 
+日期
+with 
 函数声明提升
-
+arguments 对象
+闭包（closure）
 JSON  序列化和反序列化json数据用的
-
-
+typeof 
+finally
+instanceof
+in
+8进制
+isNaN
 prototype
 
 new
@@ -18,6 +25,8 @@ DOM 对象
 
 
 Object.create
+Object.defineProperty
+
 
 
     xxxxx.call()

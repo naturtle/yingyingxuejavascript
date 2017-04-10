@@ -1,5 +1,11 @@
 declare var $$config$$:{
-    [index:string]:any
+    [index:string]:{
+        config:{
+            name:string
+            description:string
+        }
+        files:string[]
+    }
 }
 declare var tabBoxleft:HTMLDivElement[];
 declare var tabBoxtitle:HTMLDivElement;
@@ -34,7 +40,9 @@ for (var path in config) {
     // htmlTitle+='<a class="tabTitle">'+path+'. '++'</a>';
     htmlTitle+=`<a id='tabTitle' onclick='showPage(this,${index})' data-description="${data.config.description}">${data.config.name}</a>`;
         html += `
-<div id="tabBoxleft" class="tabBox-left" style="display:none;">`;
+
+<div id="tabBoxleft" class="tabBox-left" style="display:none;">
+    <div style='border-bottom:1px solid #555;margin-bottom:5px;'>本页简述:[${data.config.description}]</div>`;
     for (var i = 0; i < jsArr.length; i++) {
         var id = Math.random().toString().substring(2);
         var jsPath = path + '/' + jsArr[i];

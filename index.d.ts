@@ -1,12 +1,24 @@
 declare var $$config$$: {
-    [index: string]: any;
+    [index: string]: {
+        config: {
+            name: string;
+            description: string;
+        };
+        files: string[];
+    };
 };
 declare var tabBoxleft: HTMLDivElement[];
 declare var tabBoxtitle: HTMLDivElement;
 declare var tabTitle: HTMLAnchorElement[];
 declare var ifrm: HTMLIFrameElement;
 declare let config: {
-    [index: string]: any;
+    [index: string]: {
+        config: {
+            name: string;
+            description: string;
+        };
+        files: string[];
+    };
 };
 declare let oldIndex: number;
 declare function show(ele: HTMLElement, id: string): void;

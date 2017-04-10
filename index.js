@@ -24,7 +24,7 @@ for (var path in config) {
     var jsArr = data.files;
     // htmlTitle+='<a class="tabTitle">'+path+'. '++'</a>';
     htmlTitle += "<a id='tabTitle' onclick='showPage(this," + index + ")' data-description=\"" + data.config.description + "\">" + data.config.name + "</a>";
-    html += "\n<div id=\"tabBoxleft\" class=\"tabBox-left\" style=\"display:none;\">";
+    html += "\n\n<div id=\"tabBoxleft\" class=\"tabBox-left\" style=\"display:none;\">\n    <div style='border-bottom:1px solid #555;margin-bottom:5px;'>\u672C\u9875\u7B80\u8FF0:[" + data.config.description + "]</div>";
     for (var i = 0; i < jsArr.length; i++) {
         var id = Math.random().toString().substring(2);
         var jsPath = path + '/' + jsArr[i];

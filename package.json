@@ -21,6 +21,10 @@
     "express": "^4.15.2",
     "fs": "0.0.1-security",
     "gulp": "^3.9.1",
+    "jquery": "^3.2.1",
     "path": "^0.12.7"
+  },
+  "devDependencies": {
+    "@types/jquery": "^2.0.41"
   }
 }

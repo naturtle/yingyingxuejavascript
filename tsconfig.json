@@ -6,6 +6,13 @@
         "strictNullChecks": true,
         "declaration":true
     },
+    "typeAcquisition": {
+        "include": [
+            "gulp/PageAPI.d.ts"
+        ],
+        "enable": true
+    }
+    ,
     "include": [
         "*.ts"
     ],

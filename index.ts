@@ -14,10 +14,8 @@ declare var ifrm:HTMLIFrameElement;
 let config = $$config$$;
 let oldIndex=0;
 function show(ele:HTMLElement, id:string) {
-    // var ifrm:HTMLIFrameElement = <any>document.getElementById(id)!;
     ifrm.src = ele.getAttribute('url')!;
     ele.className='btn2';
-    // ifrm.style.display = '';
 }
 function showPage(ele:HTMLAnchorElement,idx:number){
     if(oldIndex===idx){

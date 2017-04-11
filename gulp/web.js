@@ -5,11 +5,12 @@ var fs=require('fs');
 var path=require('path');
 var readDir=require('./readdir.js').default;
 // app.use(bodyParser.urlencoded({extended: true}))
-
+// app.use(express.static( './node_modules/jquery/dist'));
 var server = app.listen(3000, function () {
-    var host = server.address().address;
-    var port = server.address().port;
+    // var host = server.address().address;
+    // var port = server.address().port;
 });
+app.use(express.static(path.join(__dirname, '../node_modules')));
 app.get('/', function (req, res) {
     res.sendFile(path.resolve('index.html'));
 });
@@ -32,19 +33,8 @@ app.get('/index.js', function (req, res) {
 });
 app.get('/js/**/*.js',function(req, res){
     res.send('<html><header><script>'
-    +`
-function log(s){
-    document.write('<br>'+JSON.stringify(s));
-}
-function log2(s){
-    document.write('<br>'+s);
-}
-var re=/\\n/g;
-function log3(s){
-    document.write('<br>'+s.replace(re,'<br>'));
-}
-function log4(s){
-    document.write('<pre>'+s+'</pre>');
-}`+fs.readFileSync('./'+req.url)+'</script></header></html>');
+    +fs.readFileSync(path.resolve("gulp/PageAPI.js"))
+    +fs.readFileSync('./'+req.url)
+    +'</script></header></html>');
 })
 console.log('http://localhost:3000/');

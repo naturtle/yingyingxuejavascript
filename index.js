@@ -1,10 +1,8 @@
 var config = $$config$$;
 var oldIndex = 0;
 function show(ele, id) {
-    // var ifrm:HTMLIFrameElement = <any>document.getElementById(id)!;
     ifrm.src = ele.getAttribute('url');
     ele.className = 'btn2';
-    // ifrm.style.display = '';
 }
 function showPage(ele, idx) {
     if (oldIndex === idx) {

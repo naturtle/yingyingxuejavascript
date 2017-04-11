@@ -2,7 +2,7 @@
 var gulp = require('gulp');
 gulp.task('default',function(){
 	console.log(`
-gulp debug   启动express，接收远程console.log
+gulp web   启动express网站
 	`);
 });
 var child_process=require('child_process');
@@ -20,6 +20,6 @@ function node(nodePath,cb){
 	});
 }
 
-gulp.task('debug',function(){
-	node('gulp/debug');
+gulp.task('web',function(){
+	node('gulp/web');
 });

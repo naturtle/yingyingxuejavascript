@@ -1,4 +1,4 @@
-declare var $$config$$: {
+interface IPathConfig {
     [index: string]: {
         config: {
             name: string;
@@ -6,23 +6,29 @@ declare var $$config$$: {
         };
         files: string[];
     };
+}
+declare let $$config$$: {
+    dom: IPathConfig;
+    js: IPathConfig;
 };
-declare var tabBoxleft: HTMLDivElement[];
-declare var tabBoxtitle: HTMLDivElement;
-declare var tabTitle: HTMLAnchorElement[];
-declare var ifrm: HTMLIFrameElement;
+declare let tabBoxleftJS: HTMLDivElement[];
+declare let tabBoxleftDOM: HTMLDivElement[];
+declare let tabBoxtitle: HTMLDivElement[];
+declare let tabTitleJS: HTMLAnchorElement[];
+declare let tabTitleDOM: HTMLAnchorElement[];
+declare let ifrm: HTMLIFrameElement;
+declare const tabBox: HTMLDivElement;
 declare let config: {
-    [index: string]: {
-        config: {
-            name: string;
-            description: string;
-        };
-        files: string[];
-    };
+    dom: IPathConfig;
+    js: IPathConfig;
 };
-declare let oldIndex: number;
 declare function show(ele: HTMLElement, id: string): void;
-declare function showPage(ele: HTMLAnchorElement, idx: number): void;
-declare var html: string;
-declare var htmlTitle: string;
-declare var index: number;
+declare const btnPanel: HTMLAnchorElement[];
+declare let oldIndexPanel: number;
+declare function showPanel(ele: HTMLAnchorElement, idx: number): void;
+declare let oldIndexJS: number;
+declare function showJSPage(ele: HTMLAnchorElement, idx: number): void;
+declare let oldIndexDOM: number;
+declare function showDOMPage(ele: HTMLAnchorElement, idx: number): void;
+declare function setjs(): void;
+declare function setdom(): void;

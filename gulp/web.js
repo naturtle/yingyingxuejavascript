@@ -11,16 +11,17 @@ var server = app.listen(3000, function () {
     // var port = server.address().port;
 });
 app.use(express.static(path.join(__dirname, '../node_modules')));
+app.use(express.static(path.join(__dirname, '../dom')));
 app.get('/', function (req, res) {
     res.sendFile(path.resolve('index.html'));
 });
 app.get('/index.js', function (req, res) {
     var data=fs.readFileSync('index.js').toString();
-    var config={};
+    var config={js:{},dom:{}};
     readDir('./js','**',function(file,path){
         var pathConfig=JSON.parse(fs.readFileSync(path+'/'+file+'/config.json').toString());
         var files=[];
-        config[file]={
+        config.js[file]={
             config:pathConfig,
             files:files
         };
@@ -28,13 +29,19 @@ app.get('/index.js', function (req, res) {
             files.push(file);
         });
     });
+    readDir('./dom','**',function(file,path){
+        var pathConfig=JSON.parse(fs.readFileSync(path+'/'+file+'/config.json').toString());
+        var files=[];
+        config.dom[file]={
+            config:pathConfig,
+            files:files
+        };
+        readDir(path+'/'+file,'html',function(file,path){
+            files.push(file);
+        });
+    });
     data=data.replace('$$config$$',JSON.stringify(config));
     res.send(data);
 });
-app.get('/js/**/*.js',function(req, res){
-    res.send('<html><header><script>'
-    +fs.readFileSync(path.resolve("gulp/PageAPI.js"))
-    +fs.readFileSync('./'+req.url)
-    +'</script></header></html>');
-})
-console.log('http://localhost:3000/');
+
+console.log('点击此链接打开网站 http://localhost:3000/');

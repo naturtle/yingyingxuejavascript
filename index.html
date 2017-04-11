@@ -1,5 +1,7 @@
 <html>
-<header>
+<head>
+    <title>小霸王学习机</title>
+    <script src='/jquery/dist/jquery.min.js'></script>
     <style>
         body {
             line-height: 2em;
@@ -52,14 +54,21 @@
         .tabBox-title>a.active{
             border-bottom-width: 0px; 
         }
+        .uhide{
+            display: none;
+        }
     </style>
 
-</header>
+</head>
 
 <body>
     <h2 class='top'>你好莹莹，我是网页，请问要学习哪个？</h2>
     <div id="tabBox">
+        <div class="tabBox-title">
+            <a id='btnPanel' class="active" onclick='showPanel(this,0)'>javascript</a><a id='btnPanel' onclick='showPanel(this,1)'>DOM</a><a></a>
+        </div>
         <div id="tabBoxtitle" class="tabBox-title"></div>
+        <div id="tabBoxtitle" class="tabBox-title" style="display:none;"></div>
         <script src='./index.js'></script>
         <iframe class="tabBox-right" id="ifrm"></iframe>
     </div>
